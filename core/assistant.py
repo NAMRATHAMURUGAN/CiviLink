@@ -43,12 +43,17 @@ class CiviLinkAssistant:
         self.sessions: Dict[str, UserSession] = {}
         
         # Initialize LLM components
-        self.intent_detector = LLMIntentDetector()
-        self.multilingual_llm = MultilingualLLM()
+        # self.intent_detector = LLMIntentDetector()
+        # self.multilingual_llm = MultilingualLLM()
+        self.intent_detector = None
+        self.multilingual_llm = None
         
         # Legacy patterns for fallback
         self.intent_patterns = self._load_intent_patterns()
         self.empathy_responses = self._load_empathy_responses()
+        
+        # Workflow definitions
+        self.workflow_definitions = self._load_workflow_definitions()
         
     def _load_intent_patterns(self) -> Dict[IntentType, List[str]]:
         """Load patterns for intent detection"""
@@ -207,6 +212,43 @@ class CiviLinkAssistant:
             return random.choice(self.empathy_responses[situation])
         return "I'm here to help you."
     
+    def _load_workflow_definitions(self) -> Dict[str, Dict]:
+        """Load workflow definitions for different services"""
+        return {
+            'widow_pension': {
+                'fields': ['full_name', 'age', 'husband_name', 'date_of_death', 'address'],
+                'questions': [
+                    "What is your full name?",
+                    "What is your age?",
+                    "What was your husband's name?",
+                    "When did your husband pass away? (DD/MM/YYYY)",
+                    "What is your current address?"
+                ],
+                'api_endpoint': '/apply_widow_pension'
+            },
+            'scholarship': {
+                'fields': ['full_name', 'age', 'school_name', 'grade', 'family_income'],
+                'questions': [
+                    "What is your full name?",
+                    "What is your age?",
+                    "What is the name of your school?",
+                    "What grade are you in?",
+                    "What is your family's monthly income?"
+                ],
+                'api_endpoint': '/apply_scholarship'
+            },
+            'certificate_application': {
+                'fields': ['certificate_type', 'full_name', 'date_of_birth', 'address'],
+                'questions': [
+                    "What type of certificate do you need? (birth/death/marriage)",
+                    "What is your full name?",
+                    "What is your date of birth? (DD/MM/YYYY)",
+                    "What is your current address?"
+                ],
+                'api_endpoint': '/apply_certificate'
+            }
+        }
+    
     def validate_consent(self, user_id: str) -> bool:
         """Check if user has given consent for processing"""
         session = self.get_or_create_session(user_id)
@@ -226,8 +268,14 @@ class CiviLinkAssistant:
         if not session.current_workflow:
             return None
         
-        # This will be implemented when we create workflow templates
-        return "What is your full name?"
+        workflow = self.workflow_definitions.get(session.current_workflow)
+        if not workflow:
+            return None
+        
+        if session.current_step < len(workflow['questions']):
+            return workflow['questions'][session.current_step]
+        
+        return None
     
     def process_message(self, user_id: str, message: Any, message_type: str = "text") -> Dict[str, Any]:
         """Main message processing pipeline with LLM integration"""
@@ -300,28 +348,34 @@ class CiviLinkAssistant:
                     "session_state": "awaiting_consent"
                 }
         
-        # Handle workflow initialization or continuation
         if not session.current_workflow:
             if intent_result.intent == IntentType.UNKNOWN:
-                response = self.multilingual_llm.generate_response(
-                    message=message,
-                    intent="intent_clarification",
-                    language=session.language,
-                    assistance_level=session.assistance_mode.value
-                )
+                if self.multilingual_llm:
+                    response = self.multilingual_llm.generate_response(
+                        message=message,
+                        intent="intent_clarification",
+                        language=session.language,
+                        assistance_level=session.assistance_mode.value
+                    )
+                else:
+                    response = type('Response', (), {'text': "I didn't understand your request. Could you please specify what service you need help with? For example: widow pension, scholarship, or certificate application."})()
                 return {
                     "response": response.text,
                     "session_state": "intent_clarification_needed"
                 }
             else:
                 session.current_workflow = intent_result.intent.value
-                response = self.multilingual_llm.generate_response(
-                    message=message,
-                    intent=f"workflow_start_{intent_result.intent.value}",
-                    language=session.language,
-                    assistance_level=session.assistance_mode.value,
-                    context={"workflow": intent_result.intent.value}
-                )
+                if self.multilingual_llm:
+                    response = self.multilingual_llm.generate_response(
+                        message=message,
+                        intent=f"workflow_start_{intent_result.intent.value}",
+                        language=session.language,
+                        assistance_level=session.assistance_mode.value,
+                        context={"workflow": intent_result.intent.value}
+                    )
+                else:
+                    start_msg = f"Starting application for {intent_result.intent.value.replace('_', ' ')}. {self.get_next_question(session)}"
+                    response = type('Response', (), {'text': start_msg})()
                 return {
                     "response": response.text,
                     "session_state": "workflow_initialized",
@@ -329,37 +383,56 @@ class CiviLinkAssistant:
                     "next_question": self.get_next_question(session)
                 }
         
-        # Continue workflow
+        # Continue workflow - process answer and get next or complete
+        workflow = self.workflow_definitions.get(session.current_workflow)
+        if workflow and session.current_step < len(workflow['fields']):
+            field = workflow['fields'][session.current_step]
+            session.collected_fields[field] = message
+            session.current_step += 1
+        
         next_question = self.get_next_question(session)
         if next_question:
-            # Generate contextual response using LLM
-            response = self.multilingual_llm.generate_response(
-                message=message,
-                intent="workflow_question",
-                language=session.language,
-                assistance_level=session.assistance_mode.value,
-                context={
-                    "workflow": session.current_workflow,
-                    "current_step": session.current_step,
-                    "next_question": next_question,
-                    "collected_fields": session.collected_fields
-                }
-            )
-            
+            response_text = self.format_response(next_question, session)
             return {
-                "response": response.text,
+                "response": response_text,
                 "session_state": "workflow_in_progress",
-                "simplified_response": response.simplified_version,
-                "explanation_response": response.explanation_version
+                "next_question": next_question
+            }
+        else:
+            # Workflow complete, call government API
+            api_data = session.collected_fields
+            api_endpoint = workflow['api_endpoint']
+            portal_url = os.getenv('PORTAL_BASE_URL', 'http://localhost:3005')
+            try:
+                import requests
+                api_response = requests.post(f"{portal_url}{api_endpoint}", json=api_data, timeout=10)
+                if api_response.status_code == 200:
+                    result = api_response.json()
+                    response_text = f"Application submitted successfully. Reference ID: {result.get('reference_id', 'N/A')}"
+                else:
+                    response_text = "There was an error submitting your application. Please try again."
+            except Exception as e:
+                self.logger.error(f"API call failed: {str(e)}")
+                response_text = "Unable to connect to government portal. Please try again later."
+            # Reset session
+            session.current_workflow = None
+            session.collected_fields = {}
+            session.current_step = 0
+            return {
+                "response": response_text,
+                "session_state": "application_submitted"
             }
         
         # Default ready state
-        response = self.multilingual_llm.generate_response(
-            message=message,
-            intent="ready",
-            language=session.language,
-            assistance_level=session.assistance_mode.value
-        )
+        if self.multilingual_llm:
+            response = self.multilingual_llm.generate_response(
+                message=message,
+                intent="ready",
+                language=session.language,
+                assistance_level=session.assistance_mode.value
+            )
+        else:
+            response = type('Response', (), {'text': "How can I help you with government services today?"})()
         
         return {
             "response": response.text,
