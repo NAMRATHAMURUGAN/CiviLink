@@ -1,6 +1,6 @@
 flask==2.3.3
 openai==1.3.7
-whisper-openai==1.1.10
+whisper-openai==1.0.0
 pytesseract==0.3.10
 pillow==10.0.1
 opencv-python==4.8.1.78
