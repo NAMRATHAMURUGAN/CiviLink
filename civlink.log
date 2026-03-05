@@ -1,0 +1,174 @@
+2026-03-05 15:37:49,279 - whatsapp.twilio_handler - WARNING - Twilio credentials not fully configured
+2026-03-05 15:37:49,286 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 15:37:49,287 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 15:37:49,288 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 15:37:49,289 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 15:37:49,335 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 15:37:49,337 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 15:38:35,554 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 15:38:35] "GET / HTTP/1.1" 200 -
+2026-03-05 15:38:37,903 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 15:38:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-05 16:05:09,767 - whatsapp.twilio_handler - WARNING - Twilio credentials not fully configured
+2026-03-05 16:05:09,771 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:05:09,771 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:05:09,773 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:05:09,773 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:05:09,804 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:05:09,804 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:05:28,595 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 16:05:28] "GET / HTTP/1.1" 200 -
+2026-03-05 16:07:33,173 - whatsapp.twilio_handler - WARNING - Twilio credentials not fully configured
+2026-03-05 16:07:33,179 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:07:33,180 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:07:33,181 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:07:33,182 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:07:33,205 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:07:33,206 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:07:38,807 - werkzeug - INFO - 172.17.56.155 - - [05/Mar/2026 16:07:38] "GET / HTTP/1.1" 200 -
+2026-03-05 16:07:41,849 - werkzeug - INFO - 172.17.56.155 - - [05/Mar/2026 16:07:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-05 16:08:28,868 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:08:28,868 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:08:28,872 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:08:28,872 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:08:28,892 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:08:28,894 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:16:14,458 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:16:14,458 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:16:14,463 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:16:14,463 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:16:14,492 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:16:14,493 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:16:23,812 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:16:23,814 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:16:23,814 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:16:23,814 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:16:23,839 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:16:23,839 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:22:28,991 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:22:28,992 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:22:28,995 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:22:28,998 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:22:29,034 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:22:29,035 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:23:57,102 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:23:57,102 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:23:57,106 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:23:57,106 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:23:57,156 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:23:57,159 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:27:11,451 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:27:11,451 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:27:11,451 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:27:11,451 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:27:11,478 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:27:11,482 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:32:09,055 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:32:09,055 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:32:09,057 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:32:09,058 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:32:09,093 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:32:09,099 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:33:09,828 - __main__ - INFO - Received Twilio WhatsApp webhook from whatsapp:+1234567890
+2026-03-05 16:33:09,837 - whatsapp.twilio_handler - INFO - Processing Twilio message from whatsapp:+1234567890
+2026-03-05 16:33:12,233 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-03-05 16:33:12,240 - core.llm_intent_detector - ERROR - LLM intent detection failed: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2026-03-05 16:33:12,240 - core.assistant - INFO - LLM detected intent: unknown for user whatsapp:+1234567890
+2026-03-05 16:33:12,243 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 16:33:12] "POST /webhook/whatsapp HTTP/1.1" 200 -
+2026-03-05 16:33:25,849 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:33:25,851 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:33:25,851 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:33:25,851 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:33:25,870 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:33:25,870 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:33:42,539 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:33:42,539 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:33:42,541 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:33:42,541 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:33:42,571 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:33:42,571 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 16:37:23,308 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 16:37:23,310 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 16:37:23,312 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 16:37:23,312 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 16:37:23,336 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 16:37:23,338 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 17:20:29,283 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 17:20:29,284 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 17:20:29,288 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 17:20:29,288 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 17:20:29,322 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 17:20:29,323 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 18:43:16,937 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 18:43:16,938 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 18:43:16,943 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 18:43:16,944 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 18:43:17,051 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 18:43:17,053 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-05 18:44:43,284 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-03-05 18:44:43,305 - core.llm_intent_detector - ERROR - LLM intent detection failed: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2026-03-05 18:44:43,310 - core.assistant - INFO - LLM detected intent: unknown for user test
+2026-03-05 18:44:43,316 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 18:44:43] "POST /api/message HTTP/1.1" 200 -
+2026-03-05 18:54:42,578 - __main__ - INFO - Received Twilio WhatsApp webhook from None
+2026-03-05 18:54:42,594 - whatsapp.twilio_handler - INFO - Processing Twilio message from 
+2026-03-05 18:54:44,024 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-03-05 18:54:44,038 - core.llm_intent_detector - ERROR - LLM intent detection failed: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2026-03-05 18:54:44,040 - core.assistant - INFO - LLM detected intent: unknown for user 
+2026-03-05 18:54:44,057 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 18:54:44] "POST /webhook/whatsapp HTTP/1.1" 200 -
+2026-03-05 18:57:21,107 - __main__ - INFO - Received Twilio WhatsApp webhook from None
+2026-03-05 18:57:21,110 - whatsapp.twilio_handler - INFO - Processing Twilio message from 
+2026-03-05 18:57:22,003 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-03-05 18:57:22,003 - core.llm_intent_detector - ERROR - LLM intent detection failed: Error code: 404 - {'error': {'message': 'The model `gpt-4` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2026-03-05 18:57:22,003 - core.assistant - INFO - LLM detected intent: unknown for user 
+2026-03-05 18:57:22,025 - werkzeug - INFO - 127.0.0.1 - - [05/Mar/2026 18:57:22] "POST /webhook/whatsapp HTTP/1.1" 200 -
+2026-03-05 19:07:04,760 - __main__ - INFO - Starting CiviLink application...
+2026-03-05 19:07:04,760 - __main__ - INFO - Performing startup data cleanup...
+2026-03-05 19:07:04,778 - privacy.consent_manager - INFO - Cleaned up 0 expired data records
+2026-03-05 19:07:04,778 - __main__ - INFO - Cleaned 0 expired records on startup
+2026-03-05 19:07:04,828 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.56.155:5000
+2026-03-05 19:07:04,828 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
