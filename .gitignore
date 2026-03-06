@@ -1,0 +1,8 @@
+.env
+*.pyc
+__pycache__/
+instance/
+.pytest_cache/
+*.db
+civlink.log
+startup.log
